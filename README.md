@@ -2,8 +2,6 @@
 
 # 🗺️ MUST Smart Campus Navigation & Student Assistance Platform (M-SNAP)
 
-
-
 **Helping Every Student Find Their Way**
 
 *A Smart Digital Campus Navigation Solution for Mbeya University of Science and Technology (MUST)*
@@ -598,6 +596,7 @@ Destination reached
 ---
 
 > "Navigation should never be a barrier to education."
+
 ---
 
 # 🏗️ System Architecture
@@ -1068,7 +1067,7 @@ Before running the project, ensure you have the following installed:
 # Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/must-smart-campus-guide.git
+git clone https://github.com/mtundudev/must-smart-campus-guide.git
 ```
 
 Move into the project directory.
@@ -1205,67 +1204,67 @@ docker compose down
 
 ## Authentication
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | /auth/register | Register new user |
-| POST | /auth/login | Login |
-| POST | /auth/logout | Logout |
-| POST | /auth/refresh | Refresh token |
+| Method | Endpoint       | Description       |
+| ------ | -------------- | ----------------- |
+| POST   | /auth/register | Register new user |
+| POST   | /auth/login    | Login             |
+| POST   | /auth/logout   | Logout            |
+| POST   | /auth/refresh  | Refresh token     |
 
 ---
 
 ## Users
 
-| Method | Endpoint |
-|--------|----------|
-| GET | /users |
-| GET | /users/{id} |
-| PUT | /users/{id} |
+| Method | Endpoint    |
+| ------ | ----------- |
+| GET    | /users      |
+| GET    | /users/{id} |
+| PUT    | /users/{id} |
 | DELETE | /users/{id} |
 
 ---
 
 ## Locations
 
-| Method | Endpoint |
-|--------|----------|
-| GET | /locations |
-| GET | /locations/{id} |
-| POST | /locations |
-| PUT | /locations/{id} |
+| Method | Endpoint        |
+| ------ | --------------- |
+| GET    | /locations      |
+| GET    | /locations/{id} |
+| POST   | /locations      |
+| PUT    | /locations/{id} |
 | DELETE | /locations/{id} |
 
 ---
 
 ## Buildings
 
-| Method | Endpoint |
-|--------|----------|
-| GET | /buildings |
-| GET | /buildings/{id} |
-| POST | /buildings |
-| PUT | /buildings/{id} |
+| Method | Endpoint        |
+| ------ | --------------- |
+| GET    | /buildings      |
+| GET    | /buildings/{id} |
+| POST   | /buildings      |
+| PUT    | /buildings/{id} |
 | DELETE | /buildings/{id} |
 
 ---
 
 ## Categories
 
-| Method | Endpoint |
-|--------|----------|
-| GET | /categories |
-| POST | /categories |
-| PUT | /categories/{id} |
+| Method | Endpoint         |
+| ------ | ---------------- |
+| GET    | /categories      |
+| POST   | /categories      |
+| PUT    | /categories/{id} |
 | DELETE | /categories/{id} |
 
 ---
 
 ## Feedback
 
-| Method | Endpoint |
-|--------|----------|
-| POST | /feedback |
-| GET | /feedback |
+| Method | Endpoint       |
+| ------ | -------------- |
+| POST   | /feedback      |
+| GET    | /feedback      |
 | DELETE | /feedback/{id} |
 
 ---
@@ -1394,29 +1393,17 @@ Performance techniques include:
 The future vision of this project includes:
 
 - AI Navigation Assistant
-
 - Voice Navigation
-
 - Indoor Building Navigation
-
 - QR Code Building Scanner
-
 - Emergency Evacuation Routes
-
 - Campus Event Navigation
-
 - Smart Parking Finder
-
 - Shuttle Bus Tracking
-
 - Lost and Found Module
-
 - Campus Maintenance Reporting
-
 - Accessibility Navigation
-
 - Offline Navigation
-
 - Multi-language Support
 
 ---
@@ -1428,7 +1415,6 @@ Contributions are welcome.
 Steps:
 
 1. Fork the repository
-
 2. Create a new branch
 
 ```bash
