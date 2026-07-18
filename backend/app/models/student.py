@@ -19,5 +19,5 @@ class Student(Base):
     created_at=Column(DateTime,default=datetime.now)
     updated_at=Column(DateTime,default=datetime.now,onupdate=datetime.now)
     
-    user= relationship("User",back_populates="student")
+    user= relationship("User",back_populates="student",uselist=False)
     
