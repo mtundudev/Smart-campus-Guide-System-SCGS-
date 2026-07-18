@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordBearer
 import bcrypt
 
-oauth2_schema=OAuth2PasswordBearer(tokenUrl="User/login")
+oauth2_schema=OAuth2PasswordBearer(tokenUrl="Auth/login")
 
 
 def create_access_token(data:dict):
@@ -27,12 +27,12 @@ def decode_token(token:str):
     
 def get_current_user(token:str=Depends(oauth2_schema),db:Session=Depends(get_db)):    
     payload=decode_token(token)
-    email=payload.get("sub")
-    if not email:
+    user_id=payload.get("sub")
+    if not user_id:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="token has no required information")
-    user=db.query(User).filter(User.email==email).first()
+    user=db.query(User).filter(User.id==int(user_id)).first()
     if not user:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="token has wrong email/username")
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="token has wrong user")
     if not user.is_active:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,detail="account is not active")
     return user

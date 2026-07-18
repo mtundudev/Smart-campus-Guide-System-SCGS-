@@ -19,6 +19,7 @@ class User(Base):
     email=Column(String,unique=True,index=True,nullable=False)
     role=Column(Enum(RoleEnum,name="user_role_enum"),default=RoleEnum.student,nullable=False)
     is_active=Column(Boolean,default=True,nullable=False)
+    profile_picture=Column(String)
     
     created_at=Column(DateTime,default=datetime.now)
     updated_at=Column(DateTime,default=datetime.now,onupdate=datetime.now)
