@@ -10,7 +10,7 @@ class Location(Base):
     id=Column(Integer,primary_key=True,index=True)
     room_id=Column(Integer,ForeignKey("rooms.id",ondelete="CASCADE"),unique=True)
     latitude=Column(Float,nullable=True)
-    longtide=Column(Float,nullable=True)
+    longitude=Column(Float,nullable=True)
     is_accessible=Column(Boolean,default=True)
     indoor=Column(Boolean,default=True)
     
@@ -18,9 +18,10 @@ class Location(Base):
     updated_at=Column(DateTime,default=datetime.now,onupdate=datetime.now)
     
     room=relationship("Room",back_populates="location")
-    route_from=relationship("Route",foreign_keys="Router.start_location_id",
-                            back_populates="start_location",
-                            cascade="all, delete-orphan")
-    route_to=relationship("Route",foreign_keys="Router.end_location_id",
-                          back_populates="start_location",
-                          cascade="all, delete-orphan")
+    
+    # #route_from=relationship("Route",foreign_keys="Router.start_location_id",
+    #                         back_populates="start_location",
+    #                         cascade="all, delete-orphan")
+    # #route_to=relationship("Route",foreign_keys="Router.end_location_id",
+    #                       back_populates="start_location",
+    #                       cascade="all, delete-orphan")

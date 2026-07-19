@@ -17,6 +17,6 @@ class Room(Base):
     updated_at=Column(DateTime,default=datetime.now,onupdate=datetime.now)
     
     floor=relationship("Floor",back_populates="room")
-    #location=relationship("Location",back_populates="room",cascade="all, delete-orphan")
+    location=relationship("Location",back_populates="room",cascade="all, delete-orphan")
     
     

@@ -4,6 +4,7 @@ from app.routers.auth import router as auth_router
 from app.routers.building import router as building_router
 from app.routers.floor import router as floor_router
 from app.routers.room import router as room_router
+from app.routers.location import router as location_router
 
 app=FastAPI(title="SMART COMPUS GUIDE SYSTEM",description="location assistance",DEBUG=True)
 
@@ -20,3 +21,4 @@ app.include_router(user_router)
 app.include_router(building_router)
 app.include_router(floor_router)
 app.include_router(room_router)
+app.include_router(location_router)
