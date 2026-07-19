@@ -11,6 +11,7 @@ class RoomCreate(BaseModel):
     floor_id:Optional[int]=None
     
 class RoomResponse(BaseModel):
+    id:int
     room_name:Optional[str]=None
     room_number:Optional[int]=None
     capacity:Optional[int]=None
