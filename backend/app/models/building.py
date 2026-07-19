@@ -15,4 +15,4 @@ class Building(Base):
     created_at=Column(DateTime,default=datetime.now)
     updated_at=Column(DateTime,default=datetime.now,onupdate=datetime.now)
     
-    #floor=relationship("Floor",back_populates="buildig",cascade="all, delete-orphan")
+    floor=relationship("Floor",back_populates="building",cascade="all, delete-orphan")

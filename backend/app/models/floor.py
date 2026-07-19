@@ -8,9 +8,9 @@ class Floor(Base):
     
     __tablename__="floors"
     id=Column(Integer,primary_key=True,index=True)
-    buiding_id=Column(Integer,ForeignKey("buidings.id",ondelete="CASCADE"),nullable=False)
-    floor_number=Column(Integer,nullable=True)
-    floor_name=Column(String,nullable=False)
+    building_id=Column(Integer,ForeignKey("buidings.id",ondelete="CASCADE"),nullable=False)
+    floor_number=Column(Integer,nullable=True,unique=True)
+    floor_name=Column(String,nullable=False,unique=True)
     
     created_at=Column(DateTime,default=datetime.now)
     updated_at=Column(DateTime,default=datetime.now,onupdate=datetime.now)
