@@ -5,6 +5,8 @@ from app.routers.building import router as building_router
 from app.routers.floor import router as floor_router
 from app.routers.room import router as room_router
 from app.routers.location import router as location_router
+from app.routers.map import router as map_router
+from fastapi.middleware.cors import CORSMiddleware
 
 app=FastAPI(title="SMART COMPUS GUIDE SYSTEM",description="location assistance",DEBUG=True)
 
@@ -22,3 +24,13 @@ app.include_router(building_router)
 app.include_router(floor_router)
 app.include_router(room_router)
 app.include_router(location_router)
+app.include_router(map_router)
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)

@@ -9,7 +9,11 @@ def create_location(data:LocationCreate,db:Session):
     room=db.query(Room).filter(Room.id==data.room_id).first()
     if not room:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,detail="targeted room not found ")
-    location=Location(**data.model_dump())
+    location=Location(
+        longitude=data.longitude,
+        latitude=data.latitude,
+        room_id=data.room_id
+    )
     db.add(location)
     db.commit()
     db.refresh(location)
@@ -31,7 +35,7 @@ def Update_location_info(id:int,data:LocationUpdate,db:Session):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail=f" the location with id {id} not found")
     location.room_id=data.room_id
     location.latitude=data.latitude
-    location.longtide=data.longitude
+    location.longitude=data.longitude
     
     db.commit()
     db.refresh(location)
